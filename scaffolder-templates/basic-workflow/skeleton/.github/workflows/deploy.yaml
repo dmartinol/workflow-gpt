@@ -34,7 +34,7 @@ jobs:
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
           git add tekton/trigger
-          git commit -m "Webhook trigger"
+          git commit --no-verify -m "Webhook trigger"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
