@@ -188,7 +188,7 @@ spec:
         sourcePath: workflow
         # TODO: get from kubernetes pulgin settings
         secrets: {
-          K8S_CLUSTER_URL: https://api.cluster-jkrpp.dynamic.redhatworkshops.io:6443
+          K8S_CLUSTER_URL: https://api.ocp-dev01.lab.eng.tlv2.redhat.com:6443
         }
     - id: create-webhook
       if: ${{ parameters.ci == 'tekton' }}
