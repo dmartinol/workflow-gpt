@@ -1,0 +1,16 @@
+---
+  apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: ${{ values.workflowId }}-app
+    namespace: ${{ values.namespace }}
+  spec:
+    project: default
+    source:
+      repoURL: ${{ values.gitConfigHttpsUrl }}
+      targetRevision: HEAD
+      path: ./kustomize/base
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: ${{ values.namespace }}
+    syncPolicy: {}  
